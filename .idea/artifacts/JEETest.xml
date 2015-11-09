@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JEETest">
+    <output-path>C:/apache-tomcat-7.0.65/webapps</output-path>
+    <root id="archive" name="JEETest.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JEE Test" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="JEE Test/web/Web" />
+    </root>
+  </artifact>
+</component>
