@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 
-/**
- * Created by Olcha on 06.11.2015.
- */
 @WebServlet("/login")
 public class TryLogin extends HttpServlet{
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
@@ -39,11 +36,7 @@ public class TryLogin extends HttpServlet{
 
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
-
-        DatabaseHelper dbHelper = new DatabaseHelper();
-        String answerFromDB = dbHelper.checkUser(username, password);
-
-        out.println("privet");
+        out.print(new DatabaseHelper().checkUser(username,password));
     }
 
 }
