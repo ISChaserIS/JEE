@@ -4,17 +4,10 @@ function hello(){
 	var ajax = new XMLHttpRequest();
 	var xxx = document.getElementById("textEdit2").value;
 	var zzz = document.getElementById("textEdit3").value;
-	ajax.open('POST', 'http://127.0.0.1:8080/JEETest/login', true);
-	ajax.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+	ajax.open('POST', 'http://127.0.0.1:8080/JEETest/login', false);
 	var json = new Object();
 	json.login = xxx;
 	json.password = zzz;
-
-	//var json = {
-	//	"login" : xxx,
-	//	"password" : yyy
-	//}
-
 	ajax.send(JSON.stringify(json));
 	var yyy =  ajax.responseText;
 	alert(yyy);

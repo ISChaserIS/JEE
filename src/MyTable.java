@@ -76,7 +76,7 @@ public class MyTable {
         this.last_name = last_name;
     }
 
-    public void setFirst_name(int age)
+    public void setFirst_name(String age)
     {
         this.first_name = first_name;
     }

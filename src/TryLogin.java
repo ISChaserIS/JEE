@@ -15,6 +15,21 @@ import java.io.*;
 @WebServlet("/login")
 public class TryLogin extends HttpServlet{
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+
+        String username = req.getParameter("login");
+        String password = req.getParameter("password");
+
+        resp.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+
+        if (username.equals("master") && password.equals("yoda")){
+            out.println("Welcome");
+        }else {
+            out.println("Incorrect login or password");
+        }
+    }
+
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         JsonReader reader = Json.createReader(new InputStreamReader(req.getInputStream()));
         JsonObject newJson = reader.readObject();
         reader.close();
@@ -31,4 +46,5 @@ public class TryLogin extends HttpServlet{
             out.println("Incorrect login or password");
         }
     }
+
 }
