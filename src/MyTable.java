@@ -7,7 +7,7 @@ import javax.persistence.Table;
  * Created by Olcha on 13.11.2015.
  */
 @Entity
-@Table(name = "A")
+@Table(name = "users")
 public class MyTable {
     @Id
     @Column(name="id")
@@ -23,7 +23,7 @@ public class MyTable {
     private String last_name;
 
     @Column(name="first_name")
-    private int first_name;
+    private String first_name;
 
     public MyTable() {}
 
@@ -49,34 +49,34 @@ public class MyTable {
         return last_name;
     }
 
-    public int getFirst_name()
+    public String getFirst_name()
     {
         return first_name;
     }
 
     // setters
 
-    public void setId(String uuid)
+    public void setId(String id)
     {
         this.id = id;
     }
 
-    public void setLogin(String lastname)
+    public void setLogin(String login)
     {
         this.login = login;
     }
 
-    public void setPassword(String firstname)
+    public void setPassword(String password)
     {
         this.password = password;
     }
 
-    public void setLast_name(String middlename)
+    public void setLast_name(String last_name)
     {
         this.last_name = last_name;
     }
 
-    public void setFirst_name(String age)
+    public void setFirst_name(String first_name)
     {
         this.first_name = first_name;
     }
