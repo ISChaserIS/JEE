@@ -10,7 +10,7 @@ function hello(){
 	json.password = zzz;
 	ajax.send(JSON.stringify(json));
 	var yyy =  ajax.responseText;
-	alert(yyy);
+	console.log(yyy);
 }
 
 function getDataFromServer () {

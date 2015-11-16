@@ -11,7 +11,8 @@ import java.io.*;
 
 @WebServlet("/login")
 public class TryLogin extends HttpServlet{
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+    DatabaseHelper dbHelper;
+    /*public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
 
         String username = req.getParameter("login");
         String password = req.getParameter("password");
@@ -24,7 +25,7 @@ public class TryLogin extends HttpServlet{
         }else {
             out.println("Incorrect login or password");
         }
-    }
+    }*/
 
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         JsonReader reader = Json.createReader(new InputStreamReader(req.getInputStream()));
@@ -36,7 +37,8 @@ public class TryLogin extends HttpServlet{
 
         resp.setContentType("text/html; charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        out.print(new DatabaseHelper().checkUser(username,password));
+        dbHelper = new DatabaseHelper();
+        out.print(dbHelper.checkUser(username,password));
     }
 
 }
